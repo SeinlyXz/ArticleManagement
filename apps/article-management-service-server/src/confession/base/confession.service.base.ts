@@ -21,28 +21,28 @@ export class ConfessionServiceBase {
     return this.prisma.confession.count(args);
   }
 
-  async confessions<T extends Prisma.ConfessionFindManyArgs>(
-    args: Prisma.SelectSubset<T, Prisma.ConfessionFindManyArgs>
+  async confessions(
+    args: Prisma.ConfessionFindManyArgs
   ): Promise<PrismaConfession[]> {
-    return this.prisma.confession.findMany<Prisma.ConfessionFindManyArgs>(args);
+    return this.prisma.confession.findMany(args);
   }
-  async confession<T extends Prisma.ConfessionFindUniqueArgs>(
-    args: Prisma.SelectSubset<T, Prisma.ConfessionFindUniqueArgs>
+  async confession(
+    args: Prisma.ConfessionFindUniqueArgs
   ): Promise<PrismaConfession | null> {
     return this.prisma.confession.findUnique(args);
   }
-  async createConfession<T extends Prisma.ConfessionCreateArgs>(
-    args: Prisma.SelectSubset<T, Prisma.ConfessionCreateArgs>
+  async createConfession(
+    args: Prisma.ConfessionCreateArgs
   ): Promise<PrismaConfession> {
-    return this.prisma.confession.create<T>(args);
+    return this.prisma.confession.create(args);
   }
-  async updateConfession<T extends Prisma.ConfessionUpdateArgs>(
-    args: Prisma.SelectSubset<T, Prisma.ConfessionUpdateArgs>
+  async updateConfession(
+    args: Prisma.ConfessionUpdateArgs
   ): Promise<PrismaConfession> {
-    return this.prisma.confession.update<T>(args);
+    return this.prisma.confession.update(args);
   }
-  async deleteConfession<T extends Prisma.ConfessionDeleteArgs>(
-    args: Prisma.SelectSubset<T, Prisma.ConfessionDeleteArgs>
+  async deleteConfession(
+    args: Prisma.ConfessionDeleteArgs
   ): Promise<PrismaConfession> {
     return this.prisma.confession.delete(args);
   }

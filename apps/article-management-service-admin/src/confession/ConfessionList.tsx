@@ -6,18 +6,17 @@ export const ConfessionList = (props: ListProps): React.ReactElement => {
   return (
     <List
       {...props}
-      bulkActionButtons={false}
       title={"Confessions"}
       perPage={50}
       pagination={<Pagination />}
     >
-      <Datagrid rowClick="show">
+      <Datagrid rowClick="show" bulkActionButtons={false}>
         <TextField label="content" source="content" />
         <DateField source="createdAt" label="Created At" />
         <TextField label="faculty" source="faculty" />
         <TextField label="ID" source="id" />
         <TextField label="SubmittedBy" source="submittedBy" />
-        <DateField source="updatedAt" label="Updated At" />
+        <DateField source="updatedAt" label="Updated At" />{" "}
       </Datagrid>
     </List>
   );

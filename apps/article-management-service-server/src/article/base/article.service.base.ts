@@ -19,29 +19,21 @@ export class ArticleServiceBase {
     return this.prisma.article.count(args);
   }
 
-  async articles<T extends Prisma.ArticleFindManyArgs>(
-    args: Prisma.SelectSubset<T, Prisma.ArticleFindManyArgs>
-  ): Promise<PrismaArticle[]> {
-    return this.prisma.article.findMany<Prisma.ArticleFindManyArgs>(args);
+  async articles(args: Prisma.ArticleFindManyArgs): Promise<PrismaArticle[]> {
+    return this.prisma.article.findMany(args);
   }
-  async article<T extends Prisma.ArticleFindUniqueArgs>(
-    args: Prisma.SelectSubset<T, Prisma.ArticleFindUniqueArgs>
+  async article(
+    args: Prisma.ArticleFindUniqueArgs
   ): Promise<PrismaArticle | null> {
     return this.prisma.article.findUnique(args);
   }
-  async createArticle<T extends Prisma.ArticleCreateArgs>(
-    args: Prisma.SelectSubset<T, Prisma.ArticleCreateArgs>
-  ): Promise<PrismaArticle> {
-    return this.prisma.article.create<T>(args);
+  async createArticle(args: Prisma.ArticleCreateArgs): Promise<PrismaArticle> {
+    return this.prisma.article.create(args);
   }
-  async updateArticle<T extends Prisma.ArticleUpdateArgs>(
-    args: Prisma.SelectSubset<T, Prisma.ArticleUpdateArgs>
-  ): Promise<PrismaArticle> {
-    return this.prisma.article.update<T>(args);
+  async updateArticle(args: Prisma.ArticleUpdateArgs): Promise<PrismaArticle> {
+    return this.prisma.article.update(args);
   }
-  async deleteArticle<T extends Prisma.ArticleDeleteArgs>(
-    args: Prisma.SelectSubset<T, Prisma.ArticleDeleteArgs>
-  ): Promise<PrismaArticle> {
+  async deleteArticle(args: Prisma.ArticleDeleteArgs): Promise<PrismaArticle> {
     return this.prisma.article.delete(args);
   }
 }
